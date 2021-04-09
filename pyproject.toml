@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "pybench"
+version = "0.1.0"
+description = "Pseudo-package for benchmarking functions in python"
+authors = ["Can H. Tartanoglu"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9.0"
+
+pandas = "^1.2.3"
+numpy = "^1.19.3"
+opencv-python = "^4.4.0"
+matplotlib = "^3.3.2"
+seaborn = "^0.11.1"
+openpyxl = "^3.0.7"
+
+[tool.poetry.dev-dependencies]
+black = {extras = ["d"], version = "^20.8b1"}
+isort = "^5.8.0"
+Cython = "^0.29.22"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+target-version = ['py38']
+include = '\.pyi?$'
+exclude = '''
+(
+ /(
+     \.eggs         # exclude a few common directories in the
+   | \.git          # root of the project
+   | \.hg
+   | \.mypy_cache
+   | \.tox
+   | \.venv
+   | _build
+   | buck-out
+   | build
+   | dist
+   | docs
+ )/
+)
+'''
